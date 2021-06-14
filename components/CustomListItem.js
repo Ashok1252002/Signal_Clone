@@ -4,16 +4,20 @@ import { ListItem, Avatar } from "react-native-elements";
 
 const CustomListItem = ({ id, chatName, enterChat }) => {
 	return (
-		<ListItem>
+		<ListItem
+			onPress={() => enterChat(id, chatName)}
+			key={id}
+			bottomDivider
+		>
 			<Avatar
 				rounded
 				source={{
-					uri: "https://devtalk.blender.org/uploads/default/original/2X/c/cbd0b1a6345a44b58dda0f6a355eb39ce4e8a56a.png",
+					uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5CTz-fbosH6Ky_59YL9rfy_J6UVlZ6IioA&usqp=CAU",
 				}}
 			/>
 			<ListItem.Content>
 				<ListItem.Title style={{ fontWeight: 800 }}>
-					Youtube Chat
+					{chatName}
 				</ListItem.Title>
 				<ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail">
 					This is a sample subtitle This is a sample subtitle This is
